@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="Anil z" name="author">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Shopwise is Powerful features and You Can Use The Perfect Build this Template For Any eCommerce Website. The template is built for sell Fashion Products, Shoes, Bags, Cosmetics, Clothes, Sunglasses, Furniture, Kids Products, Electronics, Stationery Products and Sporting Goods.">
+    <meta name="keywords"
+        content="ecommerce, electronics store, Fashion store, furniture store, bootstrap 4, clean, minimal, modern, online store, responsive, retail, shopping, ecommerce store">
+
+    <title>Apple Shop - eCommerce</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/linearicons.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/simple-line-icons.css">
+
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div class="preloader d-none">
+        <div class="lds-ellipsis">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div>
+
+
+
+
+        <!-- START SECTION BREADCRUMB -->
+        <div class="breadcrumb_section bg_gray page-title-mini">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="page-title">
+                            <h1>Cart List</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <ol class="breadcrumb justify-content-md-end">
+                            <li class="breadcrumb-item"><a href=home.html>Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">This Page</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- END CONTAINER-->
+        </div>
+
+        <div class="mt-5">
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive shop_cart_table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="product-thumbnail">&nbsp;</th>
+                                        <th class="product-name">Product</th>
+                                        <th class="product-quantity">Quantity</th>
+                                        <th class="product-subtotal">Total</th>
+                                        <th class="product-remove">Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="byList">
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="6" class="px-0">
+                                            <div class="row g-0 align-items-center">
+                                                <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
+                                                    Total: $ <span id="total"></span>
+                                                </div>
+                                                <div class="col-lg-8 col-md-6  text-start  text-md-end">
+                                                    <button onclick="CheckOut()" id="checkoutButton"
+                                                        class="btn btn-line-fill btn-sm" type="submit">Check
+                                                        Out</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        function CheckOut() {
+            // Redirect to profile.html
+            window.location.href = 'profile.html';
+        }
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the cart items from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Get the container element for the cart list
+            const cartList = document.getElementById('byList');
+
+            // Initialize total price
+            let totalPrice = 0;
+
+            // Loop through cart items and create table rows
+            cart.forEach((item, index) => {
+                const row = document.createElement('tr');
+
+                // Calculate the total price for the item
+                const itemTotal = parseFloat(item.price.replace(/[^0-9.]/g, '')) * item.qty;
+                totalPrice += itemTotal;
+
+                row.innerHTML = `
+            <td class="product-thumbnail"><img src="${item.product.img}" alt="product"></td>
+            <td class="product-name">${item.product.title}</td>
+            <td class="product-quantity">${item.qty}</td>
+            <td class="product-subtotal"> ${itemTotal.toFixed(2)} TK</td>
+            <td class="product-remove"><a class="remove" data-id="${index}"><i class="ti-close"></i></a></td>
+        `;
+
+                // Append the row to the table body
+                cartList.appendChild(row);
+            });
+
+            // Update the total price in the table
+            document.getElementById('total').innerText = totalPrice.toFixed(2);
+
+            // Save the total price to localStorage in the correct way
+            localStorage.setItem('totalPrice', JSON.stringify(totalPrice));
+
+            // Handle remove item from cart
+            document.querySelectorAll('.remove').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const itemId = e.target.closest('.remove').getAttribute('data-id');
+                    cart.splice(itemId, 1); // Remove item from cart
+                    localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+                    location.reload(); // Reload the page to update the cart
+                });
+            });
+        });
+
+
+    </script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

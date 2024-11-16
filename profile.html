@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="Anil z" name="author">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Shopwise is Powerful features and You Can Use The Perfect Build this Template For Any eCommerce Website. The template is built for sell Fashion Products, Shoes, Bags, Cosmetics, Clothes, Sunglasses, Furniture, Kids Products, Electronics, Stationery Products and Sporting Goods.">
+    <meta name="keywords"
+        content="ecommerce, electronics store, Fashion store, furniture store, bootstrap 4, clean, minimal, modern, online store, responsive, retail, shopping, ecommerce store">
+
+    <title>Apple Shop - eCommerce</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/linearicons.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/simple-line-icons.css">
+
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div class="preloader d-none">
+        <div class="lds-ellipsis">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div>
+
+
+      
+      <div class="container mt-5">
+            <div class="row">
+                <div class="col-12">
+    
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="order-tab" data-bs-toggle="tab" data-bs-target="#order-tab-pane" type="button" role="tab" aria-controls="order-tab-pane" aria-selected="false">Orders</button>
+                        </li>
+                    </ul>
+    
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane  " id="profile-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+
+                            <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Customer Name</label>
+                    <input type="text" id="cus_name" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Customer Address</label>
+                    <input type="text" id="cus_add" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Customer City</label>
+                    <input type="text" id="cus_city" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Customer State</label>
+                    <input type="text" id="cus_state" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Customer Post Code</label>
+                    <input type="text" id="cus_postcode" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Customer Country</label>
+                    <input type="text" id="cus_country" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Customer Phone</label>
+                    <input type="text" id="cus_phone" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Customer Fax</label>
+                    <input type="text" id="cus_fax" class="form-control form-control-sm"/>
+                </div>
+        
+            </div>
+        
+            <hr/>
+        
+            <div class="row">
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Shipping Name</label>
+                    <input type="text" id="ship_name" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Shipping Address</label>
+                    <input type="text" id="ship_add" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Shipping City</label>
+                    <input type="text" id="ship_city" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Shipping State</label>
+                    <input type="text" id="ship_state" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Shipping Post Code</label>
+                    <input type="text" id="ship_postcode" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Shipping Country</label>
+                    <input type="text" id="ship_country" class="form-control form-control-sm"/>
+                </div>
+        
+                <div class="col-md-3 p-2">
+                    <label class="form-label">Shipping Phone</label>
+                    <input type="text" id="ship_phone" class="form-control form-control-sm"/>
+                </div>
+        
+            </div>
+        
+            <hr/>
+        
+        
+        
+            <div class="row">
+                <div class="col-md-3">
+                    <button onclick="ProfileCreate()" class="btn btn-danger">Save Change</button>
+                </div>
+            </div>
+        
+        
+                            </div> 
+
+                         </div>
+
+                         <div class="tab-pane show active" id="order-tab-pane" role="tabpanel" aria-labelledby="order-tab" tabindex="0">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12 col-md-12 col-lg-12">
+                                       <div class="table-responsive">
+                                           <table class="table">
+                                               <thead>
+                                               <tr>
+                                                   <th>No</th>
+                                                   <th>Payable</th>
+                                                   <th>Shipping</th>
+                                                   <th>Delivery</th>
+                                                   <th>Payment</th>
+                                         
+                                               </tr>
+                                               </thead>
+                                               <tbody id="OrderList">
+
+                                               <tr>
+                                                   <td>1</td>
+                                                   <td>totalPrice</td>
+                                                   <td> Pending </td>
+                                                   <td> Pending </td>
+                                                   <td> Pending </td>
+                                                  
+                                               </tr>
+
+                                               </tbody>
+                                           </table>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                           
+                            
+                         </div> 
+                    </div>
+                </div>
+            </div>
+      </div>
+                                 
+                      
+
+    </div>
+
+    <script>
+
+// Retrieve totalPrice from localStorage
+const totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
+
+// Check if totalPrice is not null and update the table
+if (totalPrice !== null) {
+    // Select the cell where totalPrice should be displayed
+    const payableCell = document.querySelector('#OrderList tr td:nth-child(2)');
+
+    // Update the cell with totalPrice value
+    payableCell.textContent = totalPrice;
+} 
+    
+     </script>
+        
+
+
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
