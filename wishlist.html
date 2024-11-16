@@ -20,7 +20,6 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
 
-    <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
@@ -50,9 +49,6 @@
 
     <div>
 
-
-
-        <!-- START SECTION BREADCRUMB -->
         <div class="breadcrumb_section bg_gray page-title-mini">
             <div class="container">
                 <div class="row align-items-center">
@@ -68,10 +64,8 @@
                         </ol>
                     </div>
                 </div>
-            </div><!-- END CONTAINER-->
+            </div>
         </div>
-
-
 
         <div class="mt-5">
             <div class="container my-5">
@@ -113,34 +107,24 @@
             </div>
         </div>
 
-
-
-
     </div>
 
 
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Retrieve wishlist items from localStorage
             let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-            // Get the container where the wishlist items will be displayed
             let wishlistContainer = document.getElementById('byList');
-
-            // Clear any existing content in the container
+            
             wishlistContainer.innerHTML = '';
 
-            // Check if there are items in the wishlist
             if (wishlist.length === 0) {
                 wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
                 return;
             }
 
-            // Loop through each item in the wishlist and create the HTML structure
             wishlist.forEach((item, index) => {
-                let wishlistItemHTML = `
-            <div class="col-lg-3 col-md-4 col-6">
+                let wishlistItemHTML = `<div class="col-lg-3 col-md-4 col-6">
                 <div class="product">
                     <div class="product_img">
                         <a href="#">
@@ -160,20 +144,16 @@
                         <button class="btn remove btn-sm my-2 btn-danger" data-index="${index}">Remove</button>
                     </div>
                 </div>
-            </div>
-        `;
-                wishlistContainer.innerHTML += wishlistItemHTML;
+            </div>`;
+                
+            wishlistContainer.innerHTML += wishlistItemHTML;
             });
 
-            // Add event listeners to remove buttons
             document.querySelectorAll('.remove').forEach(button => {
                 button.addEventListener('click', function () {
                     let index = this.getAttribute('data-index');
-                    // Remove the item from the wishlist
                     wishlist.splice(index, 1);
-                    // Save the updated wishlist to localStorage
                     localStorage.setItem('wishlist', JSON.stringify(wishlist));
-                    // Reload the page to update the wishlist
                     location.reload();
                 });
             });

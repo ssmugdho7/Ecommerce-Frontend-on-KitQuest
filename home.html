@@ -8,33 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KitQuest</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
-
-    <style>
-        .carousel-item background_bg{
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
-
-        .search_wrap, .search_overlay {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Adjust as needed */
-            z-index: 9999; /* Ensure it's on top */
-}      
-    </style>
-
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
-
-    <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
@@ -47,10 +25,11 @@
     <link rel="stylesheet" href="assets/css/slick-theme.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/axios.min.js"></script>
 </head>
+
 
 <body>
 
@@ -80,10 +59,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="text-center text-md-end">
-                                <ul class="header_list">
-                                    <li><a href="policy.html">About</a></li>
-
-
+                             
+                                <ul class="flex justify-content-md-start header_list">
+                                   <li><input type="text" id="searchInput" placeholder="Search..." class="form-control form-control-sm"> </li> 
                                     <li><a class="btn btn-danger btn-sm" href="/registration">Registration</a></li>
                                     <li><a class="btn btn-danger btn-sm" href="/login">Login</a></li>
 
@@ -108,44 +86,40 @@
                         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li><a class="nav-link nav_item" href="/">Home</a></li>
+                                
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">Products</a>
+                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
                                     <div class="dropdown-menu">
                                         <ul id="CategoryItem">
-                                            <li><a class="dropdown-item nav-link nav_item"
-                                                    >Soap Making Ingredients</a>
-                                            
-                                            
-                                            
-                                                    <div class="dropdown-menu">
-                                                        <ul>
-                                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=bases">Bases</a></li>
-                                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=oils">Oils</a></li>
-                                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=cosmetic-colors">Cosmetic Colors</a></li>
-                                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=additives">Additives</a></li>
-                                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=moulds-and-tools">Moulds and Tools</a></li>
-                                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=ingredients">Ingredients</a></li>
-                                            
-                                                        </ul>
-                                                    </div>
-                                            
-                                            
-                                            
-                                            
-                                            
+                                            <li class="dropdown">
+                                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Soap Making Ingredients</a>
+                                                <div class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a class="dropdown-item" href="byCategoryList.html?category=bases">Bases</a></li>
+                                                        <li><a class="dropdown-item" href="byCategoryList.html?category=oils">Oils</a></li>
+                                                        <li><a class="dropdown-item" href="byCategoryList.html?category=cosmetic-colors">Cosmetic Colors</a></li>
+                                                        <li><a class="dropdown-item" href="byCategoryList.html?category=additives">Additives</a></li>
+                                                        <li><a class="dropdown-item" href="byCategoryList.html?category=moulds-and-tools">Moulds and Tools</a></li>
+                                                        <li><a class="dropdown-item" href="byCategoryList.html?category=ingredients">Ingredients</a></li>
+                                                    </ul>
+                                                </div>
                                             </li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=kits-and-gifting">Kits and Gifting</a>
-                                            </li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=baking">Baking</a></li>
-                                            <li><a class="dropdown-item nav-link nav_item" href="byCategoryList.html?category=sweat-deals">Sweet Deals</a></li>
+                                            <li><a class="dropdown-item" href="byCategoryList.html?category=kits-and-gifting">Kits and Gifting</a></li>
+                                            <li><a class="dropdown-item" href="byCategoryList.html?category=baking">Baking</a></li>
+                                            <li><a class="dropdown-item" href="byCategoryList.html?category=sweat-deals">Sweet Deals</a></li>
                                         </ul>
                                     </div>
                                 </li>
+                                
+
+
+
+
+                                
                                 <li><a class="nav-link nav_item" href="wishlist.html"><i class="ti-heart"></i> Wish</a></li>
-                                <li><a class="nav-link nav_item" href="cartList.html"><i class="linearicons-cart"></i> Cart </a>
-                                </li>
+                                <li><a class="nav-link nav_item" href="cartList.html"><i class="linearicons-cart"></i> Cart </a></li>
                                 <li>
-                                   <div class="mt-2 ps-3"> <input type="text" id="searchInput" placeholder="Search..." class="form-control"> </div>
+                                    <a class="nav-link nav_item" href="policy.html"><i class="fi fi-rr-info"></i>About</a>
                                     
                                 </li>
                             </ul>
@@ -635,15 +609,15 @@
                                 <ul class="contact_info contact_info_light">
                                     <li>
                                         <i class="ti-location-pin"></i>
-                                        <p>123 Street, Old Trafford, New South London , UK</p>
+                                        <p>Building 134, D Block, Basundhara R/A, Dhaka</p>
                                     </li>
                                     <li>
                                         <i class="ti-email"></i>
-                                        <a href="mailto:info@sitename.com">info@apple.com</a>
+                                        <a href="mailto:info@sitename.com">info@kitquest.com</a>
                                     </li>
                                     <li>
                                         <i class="ti-mobile"></i>
-                                        <p>+ 457 789 789 65</p>
+                                        <p>+ 880 1758551245</p>
                                     </li>
                                 </ul>
                             </div>
@@ -675,13 +649,12 @@
     button.addEventListener('click', (e) => {
         const banner = e.target.closest('.banner_content');
 
-        // Ensure banner is not null before accessing its children
+        
         if (banner) {
-            // Fetch product name and price based on the closest banner content
             const productName = banner.querySelector('h2')?.textContent || '';
             const productPrice = banner.querySelector('h5')?.textContent.split(" ")[0] || '';
 
-            // Store in localStorage
+
             localStorage.setItem('productName', productName);
             localStorage.setItem('productPrice', productPrice);
         } else {
@@ -695,37 +668,40 @@
 
 document.getElementById('searchInput').addEventListener('input', function() {
     const filter = this.value.toLowerCase();
-    let firstMatchFound = false; // To keep track of the first match
-
-    // Search within the "Top Categories" section
+    let firstMatchFound = false; 
+    
+    
     const categoryItems = document.querySelectorAll('#TopCategoryItem .categories_box span');
     categoryItems.forEach(function(item) {
         const parentDiv = item.closest('.col-2');
         if (item.textContent.toLowerCase().includes(filter)) {
-            parentDiv.style.display = ''; // Show
+            parentDiv.style.display = ''; 
             if (!firstMatchFound) {
-                parentDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the first match
+                parentDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
                 firstMatchFound = true;
             }
         } else {
-            parentDiv.style.display = 'none'; // Hide
-        }
-    });
+            parentDiv.style.display = 'none'; 
+    } } )
+    
+    
+    ;
 
-    // Search within the "Exclusive Products" tabs
+
+ 
     const productSections = ['#PopularItem', '#NewItem', '#TopItem', '#SpecialItem', '#TrendingItem'];
     productSections.forEach(function(sectionId) {
         const products = document.querySelectorAll(`${sectionId} .product_title`);
         products.forEach(function(product) {
             const productDiv = product.closest('.col-lg-3, .col-md-4, .col-6');
             if (product.textContent.toLowerCase().includes(filter)) {
-                productDiv.style.display = ''; // Show
+                productDiv.style.display = ''; 
                 if (!firstMatchFound) {
-                    productDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the first match
+                    productDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
                     firstMatchFound = true;
                 }
             } else {
-                productDiv.style.display = 'none'; // Hide
+                productDiv.style.display = 'none'; 
             }
         });
     });

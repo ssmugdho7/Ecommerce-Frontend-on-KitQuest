@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
-    <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
@@ -44,8 +42,6 @@
 </div>
 
 <div>
-
-<!-- Product Details starts -->
 
 <div class="section">
     <div class="container">
@@ -107,15 +103,12 @@
         </div>
 </div>
 
-<!-- Product Details Ends -->
 
 <form id="productForm">
     <input type="hidden" id="hiddenProductName" name="productName">
     <input type="hidden" id="hiddenProductPrice" name="productPrice">
 </form>
 
-
-<!-- Product Specification/tab Starts -->
 
 <div class="container">
     <div class="row">
@@ -164,32 +157,23 @@
 </div>
 
 
-<!-- Product Specification/tab Starts -->
-
-
 
 <script>
 
-
-// Wait for the DOM to fully load
 document.addEventListener("DOMContentLoaded", function() {
-    // Increment quantity
     document.querySelectorAll('.plus').forEach(function(button) {
         button.addEventListener('click', function() {
-            // Find the quantity input field in the same parent container
             let quantityInput = this.parentElement.querySelector('#p_qty');
             let currentValue = parseInt(quantityInput.value);
             quantityInput.value = currentValue + 1;
         });
     });
 
-    // Decrement quantity
     document.querySelectorAll('.minus').forEach(function(button) {
         button.addEventListener('click', function() {
-            // Find the quantity input field in the same parent container
             let quantityInput = this.parentElement.querySelector('#p_qty');
             let currentValue = parseInt(quantityInput.value);
-            if (currentValue > 1) { // Prevent the value from going below 1
+            if (currentValue > 1) { 
                 quantityInput.value = currentValue - 1;
             }
         });
@@ -197,8 +181,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });  
 
  
-
-    // Set the values in hidden input fields
     document.getElementById('hiddenProductName').value = productName;
     document.getElementById('hiddenProductPrice').value = productPrice;
 
@@ -206,13 +188,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function AddToCart() {
-    // Get product details
     const productName = localStorage.getItem('productName') || '';
     const productPrice = localStorage.getItem('productPrice') || '';
     const productQty = document.getElementById('p_qty').value;
     const productImg = document.getElementById('product_img1').src;
 
-    // Create a cart item object
     const cartItem = {
         product: {
             title: productName,
@@ -222,16 +202,9 @@ document.addEventListener("DOMContentLoaded", function() {
         price: productPrice
     };
 
-    // Get existing cart items from localStorage or create a new array if empty
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Add the new item to the cart array
     cart.push(cartItem);
-
-    // Save the updated cart array back to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Redirect to cartList.html
     window.location.href = 'cartList.html';
 }
 
@@ -239,12 +212,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function AddToWishList() {
-    // Get product details
     const productName = localStorage.getItem('productName') || '';
     const productPrice = localStorage.getItem('productPrice') || '';
     const productImg = document.getElementById('product_img1').src;
 
-    // Create a wishlist item object
     const wishlistItem = {
         product: {
             title: productName,
@@ -253,16 +224,10 @@ function AddToWishList() {
         }
     };
 
-    // Get existing wishlist items from localStorage or create a new array if empty
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-    // Add the new item to the wishlist array
     wishlist.push(wishlistItem);
-
-    // Save the updated wishlist array back to localStorage
     localStorage.setItem('wishlist', JSON.stringify(wishlist));
 
-    // Notify the user that the item has been added
     alert("Item added to your wishlist!");
 }
 
@@ -271,7 +236,6 @@ function AddToWishList() {
     
 </script>
 
-<!-- Product Details Ends -->
 
 
 </div>

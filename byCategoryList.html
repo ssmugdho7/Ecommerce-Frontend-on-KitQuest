@@ -7,7 +7,7 @@
     <meta content="Anil z" name="author">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="Shopwise is Powerful features and You Can Use The Perfect Build this Template For Any eCommerce Website. The template is built for sell Fashion Products, Shoes, Bags, Cosmetics, Clothes, Sunglasses, Furniture, Kids Products, Electronics, Stationery Products and Sporting Goods.">
+        content="KitQuest is Powerful features and You Can Use The Perfect Build this Template For Any eCommerce Website. The template is built for sell Fashion Products, Shoes, Bags, Cosmetics, Clothes, Sunglasses, Furniture, Kids Products, Electronics, Stationery Products and Sporting Goods.">
     <meta name="keywords"
         content="ecommerce, electronics store, Fashion store, furniture store, bootstrap 4, clean, minimal, modern, online store, responsive, retail, shopping, ecommerce store">
 
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
 
-    <!-- Icon Font CSS -->
+
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
@@ -50,10 +50,7 @@
 
     <div>
 
-        <!-- Prdocuts By Category Starts -->
 
-
-        <!-- START SECTION BREADCRUMB -->
         <div class="breadcrumb_section bg_gray page-title-mini">
             <div class="container">
                 <div class="row align-items-center">
@@ -69,47 +66,12 @@
                         </ol>
                     </div>
                 </div>
-            </div><!-- END CONTAINER-->
+            </div>
         </div>
 
         <div class="mt-5">
             <div class="container my-5">
                 <div id="byCategoryList" class="row">
-
-
-                    <!-- <div class="col-lg-3 col-md-4 col-6">
-                <div class="product">
-                    <div class="product_img">
-                        <a href="#">
-                            <img src="assets/images/product_img4.jpg" alt="product_img9">
-                        </a>
-                        <div class="product_action_box">
-                            <ul class="list_none pr_action_btn">
-                                <li><a href="/details?id=${item['id']}" class="popup-ajax"><i class="icon-magnifier-add"></i></a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="product_info">
-                        <h6 class="product_title"><a href="/details?id=${item['id']}">${item['title']}</a></h6>
-                        <div class="product_price">
-                            <span class="price">price</span>
-                        </div>
-                        <div class="rating_wrap">
-                            <div class="rating">
-                                <div class="product_rate" style="width:${item['star']}%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>
@@ -119,7 +81,6 @@
     <script>
 
 
-        // Example array of product objects
         const productsByCategory = {
 
             "bases": [
@@ -127,7 +88,7 @@
                 { id: 2, title: 'Sulfate Free Goat Milk Soap Base', image: 'assets/images/Soap/Bases/Sulfate Free Goat Milk Soap Base.jpg', price: '200 TK', star: 90 },
                 { id: 3, title: 'sulfate free Shampoo base', image: 'assets/images/Soap/Bases/sulfate free Shampoo base.jpg', price: '200 TK', star: 70 },
                 { id: 4, title: 'Sulfate Free Suspending Face Wash Base', image: 'assets/images/Soap/Bases/Sulfate Free Suspending Face Wash Base.jpg', price: '300 TK', star: 70 }
-                // Add more products as needed
+
             ],
 
 
@@ -197,9 +158,6 @@
 
 
 
-
-            // Add more products as needed
-
         };
 
 
@@ -210,10 +168,9 @@
         }
 
 
-        // Get the category from the URL
         const category = getUrlParameter('category');
 
-        // Get the container element
+  
         const container = document.getElementById('byCategoryList');
 
 
@@ -223,13 +180,12 @@
 
 
 
-            // Loop through the products and create HTML elements
             products.forEach(item => {
-                // Create a new div for each product
+       
                 const productDiv = document.createElement('div');
                 productDiv.className = 'col-lg-3 col-md-4 col-6';
 
-                // Set the innerHTML with product details
+              
                 productDiv.innerHTML = `
             <div class="product">
                 <div class="product_img">
@@ -257,10 +213,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
 
-                // Append the product div to the container
+
                 container.appendChild(productDiv);
             });
         } else {
@@ -268,13 +223,6 @@
         }
 
     </script>
-
-
-    <!-- Prdocuts By Category ends -->
-
-
-
-
 
 
     <script src="assets/js/scripts.js"></script>

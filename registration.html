@@ -6,10 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="Anil z" name="author">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Shopwise is Powerful features and You Can Use The Perfect Build this Template For Any eCommerce Website. The template is built for sell Fashion Products, Shoes, Bags, Cosmetics, Clothes, Sunglasses, Furniture, Kids Products, Electronics, Stationery Products and Sporting Goods.">
-    <meta name="keywords"
-        content="ecommerce, electronics store, Fashion store, furniture store, bootstrap 4, clean, minimal, modern, online store, responsive, retail, shopping, ecommerce store">
+    <meta name="description" content="Shopwise is Powerful features and You Can Use The Perfect Build this Template For Any eCommerce Website. The template is built for sell Fashion Products, Shoes, Bags, Cosmetics, Clothes, Sunglasses, Furniture, Kids Products, Electronics, Stationery Products and Sporting Goods.">
+    <meta name="keywords" content="ecommerce, electronics store, Fashion store, furniture store, bootstrap 4, clean, minimal, modern, online store, responsive, retail, shopping, ecommerce store">
 
     <title>Apple Shop - eCommerce</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
@@ -17,10 +15,8 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <!-- Icon Font CSS -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
@@ -49,7 +45,6 @@
     </div>
 
     <div>
-
         <div class="registration_register_wrap section">
             <div class="container">
                 <div class="row justify-content-center">
@@ -57,51 +52,37 @@
                         <div class="registration_wrap">
                             <div class="padding_eight_all bg-white">
                                 <div class="heading_s1">
-                                    <h3>registration</h3>
+                                    <h3>Registration</h3>
                                 </div>
-                                <div class="form-group m-3 " >
-                                    <input id="name" type="text" required="" class="form-control" name="name"
-                                        placeholder="Your Name">
-                                    <input id="email" type="text" required="" class="form-control mt-3" name="email"
-                                        placeholder="Your Email">
-        
-                                    <input id="password" type="password" required="" class="form-control mt-3" name="password"
-                                        placeholder="Your Password">
+                                <div class="form-group m-3">
+                                    <input id="name" type="text" required class="form-control" name="name" placeholder="Your Name">
+                                    <input id="email" type="text" required class="form-control mt-3" name="email" placeholder="Your Email">
+                                    <input id="password" type="password" required class="form-control mt-3" name="password" placeholder="Your Password">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <button onclick="registration()" type="submit" class="btn btn-fill-out btn-block"
-                                        name="registration">Next</button>
+                                    <button onclick="registration()" type="submit" class="btn btn-fill-out btn-block" name="registration">Next</button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
-
-
 
     <script>
         function registration() {
-            // Get form input values
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value.trim();
         
-            // Email validation pattern
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
-            // Validate name
             if (name === '') {
                 alert("Please enter your name.");
                 return;
             }
         
-            // Validate email
             if (email === '') {
                 alert("Please enter your email.");
                 return;
@@ -110,7 +91,6 @@
                 return;
             }
         
-            // Validate password
             if (password === '') {
                 alert("Please enter your password.");
                 return;
@@ -119,17 +99,14 @@
                 return;
             }
         
-            // Save registration data to localStorage
             localStorage.setItem('registeredName', name);
             localStorage.setItem('registeredEmail', email);
             localStorage.setItem('registeredPassword', password);
         
-            // If all validations pass, redirect to login.html
             alert("Registration successful!");
             window.location.href = "login.html";
         }
-        </script>
-        
+    </script>
 
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/magnific-popup.min.js"></script>
